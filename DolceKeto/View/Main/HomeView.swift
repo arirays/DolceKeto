@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+//    var recipe: Recipe
+    
     var body: some View {
-        Text("Home")
-            .padding()
+        NavigationView {
+            List(Recipe.testRecipes) { recipe in
+                Text(recipe.name)
+                    .navigationTitle("My Recipes")
+            }
+        }
     }
 }
 
