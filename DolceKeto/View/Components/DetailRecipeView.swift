@@ -24,34 +24,39 @@ struct DetailRecipeView: View {
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(height: 300)
+            .frame(height: 400)
             .background(Color.gray)
             
             VStack(spacing: 30) {
-                Text(recipe.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
+                    Text(recipe.name)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 30) {
-                    
-                    Text(recipe.description)
-                    
-                    VStack(alignment: .leading,spacing: 20) {
-                        Text("Ingredients")
-                            .font(.headline)
-                        Text(recipe.ingredients)
+                    if !recipe.description.isEmpty {
+                        Text(recipe.description)
                     }
                     
-                    VStack(alignment: .leading,spacing: 20) {
-                        Text("Directions")
-                            .font(.headline)
-                        Text(recipe.directions)
+                    if !recipe.ingredients.isEmpty {
+                        VStack(alignment: .leading,spacing: 20) {
+                            Text("Ingredients")
+                                .font(.headline)
+                            Text(recipe.ingredients)
+                        }
                     }
-                }
+                    
+                    if !recipe.directions.isEmpty {
+                        VStack(alignment: .leading,spacing: 20) {
+                            Text("Directions")
+                                .font(.headline)
+                            Text(recipe.directions)
+                        }
+                    }
+                                    }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding()
+            .padding(.horizontal)
         }
         .ignoresSafeArea(.container, edges: .top)
     }
