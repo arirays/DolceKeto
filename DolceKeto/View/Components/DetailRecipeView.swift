@@ -16,6 +16,7 @@ struct DetailRecipeView: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
@@ -24,14 +25,19 @@ struct DetailRecipeView: View {
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(height: 400)
+            .frame(height: 300)
             .background(Color.gray)
             
             VStack(spacing: 30) {
-                    Text(recipe.name)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
+                
+                Text(recipe.name)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 3)
+                    .frame(maxWidth: 300)
+                    .padding()
+                    .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 30) {
                     if !recipe.description.isEmpty {
@@ -39,7 +45,7 @@ struct DetailRecipeView: View {
                     }
                     
                     if !recipe.ingredients.isEmpty {
-                        VStack(alignment: .leading,spacing: 20) {
+                        VStack(alignment: .leading, spacing: 20) {
                             Text("Ingredients")
                                 .font(.headline)
                             Text(recipe.ingredients)
@@ -47,14 +53,16 @@ struct DetailRecipeView: View {
                     }
                     
                     if !recipe.directions.isEmpty {
-                        VStack(alignment: .leading,spacing: 20) {
+                        VStack(alignment: .leading ,spacing: 20) {
                             Text("Directions")
                                 .font(.headline)
                             Text(recipe.directions)
                         }
                     }
-                                    }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                }
+//                .padding()
+                .frame(maxWidth: 300, alignment: .leading)
+//                .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(.horizontal)
         }
@@ -62,9 +70,8 @@ struct DetailRecipeView: View {
     }
 }
 
-
 struct DetailRecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailRecipeView(recipe: Recipe.testRecipes[0])
+        DetailRecipeView(recipe: Recipe.testRecipes[4])
     }
 }

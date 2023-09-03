@@ -12,10 +12,10 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            List(Recipe.testRecipes) { recipe in
-                Text(recipe.name)
-                    .navigationTitle("My Recipes")
+            ScrollView {
+                RecipeList(recipes: Recipe.testRecipes)
             }
+            .navigationTitle("My Recipes")
         }
     }
 }
