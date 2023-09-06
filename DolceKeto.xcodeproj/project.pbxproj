@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B2FF9C62AA295ED006F2E74 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */; };
 		0B2FF9C82AA29B77006F2E74 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */; };
+		0B2FF9CC2AA92864006F2E74 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9CB2AA92864006F2E74 /* AddRecipeView.swift */; };
+		0B2FF9CE2AA93758006F2E74 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9CD2AA93758006F2E74 /* RecipesViewModel.swift */; };
 		0B39F5E62A9ED1A7005E533A /* DolceKetoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B39F5E52A9ED1A7005E533A /* DolceKetoApp.swift */; };
 		0B39F5E82A9ED1A7005E533A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B39F5E72A9ED1A7005E533A /* ContentView.swift */; };
 		0B39F5EA2A9ED1A7005E533A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B39F5E92A9ED1A7005E533A /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
+		0B2FF9CB2AA92864006F2E74 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
+		0B2FF9CD2AA93758006F2E74 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		0B39F5E22A9ED1A7005E533A /* DolceKeto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolceKeto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B39F5E52A9ED1A7005E533A /* DolceKetoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolceKetoApp.swift; sourceTree = "<group>"; };
 		0B39F5E72A9ED1A7005E533A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		0B39F6102A9ED211005E533A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0B2FF9CD2AA93758006F2E74 /* RecipesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				0B39F6202AA01181005E533A /* DetailRecipeView.swift */,
 				0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */,
 				0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */,
+				0B2FF9CB2AA92864006F2E74 /* AddRecipeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -326,6 +332,8 @@
 			files = (
 				0B39F6132A9ED570005E533A /* Recipe.swift in Sources */,
 				0B2FF9C62AA295ED006F2E74 /* RecipeCard.swift in Sources */,
+				0B2FF9CC2AA92864006F2E74 /* AddRecipeView.swift in Sources */,
+				0B2FF9CE2AA93758006F2E74 /* RecipesViewModel.swift in Sources */,
 				0B39F61E2AA0047D005E533A /* SettingsView.swift in Sources */,
 				0B39F5E82A9ED1A7005E533A /* ContentView.swift in Sources */,
 				0B39F61A2AA0045F005E533A /* FavoritesView.swift in Sources */,
