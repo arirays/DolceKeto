@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct DolceKetoApp: App {
+    
+    @StateObject var recipeViewModel = RecipesViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(recipeViewModel)
         }
     }
 }
