@@ -51,18 +51,19 @@ struct AddRecipeView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(isActive: $navigateToRecipe) {
                         DetailRecipeView(recipe: recipesVM.recipes.sorted{ $0.datePublished > $1.datePublished} [0])
-                        .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(true)
                     } label: {
-                            Button {
-                                navigateToRecipe = true
-                            } label: {
-                                Label("Done", systemImage: "checkmark")
-                                    .labelStyle(.iconOnly)
-                            }
-                        
+                        Button {
+                            saveRecipe()
+                            navigateToRecipe = true
+                        } label: {
+                            Label("Done", systemImage: "checkmark")
+                                .labelStyle(.iconOnly)
                         }
-                    .disabled(name.isEmpty)
+                        
                     }
+                    .disabled(name.isEmpty)
+                }
             })
             .navigationTitle("New Recipe")
             .navigationBarTitleDisplayMode(.inline)
@@ -74,5 +75,21 @@ struct AddRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         AddRecipeView()
             .environmentObject(RecipesViewModel())
+    }
+}
+
+
+extension AddRecipeView {
+    private func saveRecipe() {
+        let now = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let datePublished = dateFormatter.string(from: now)
+        print(datePublished)
+        
+        let recipe = Recipe(name: name, image: "", description: description, ingredients: ingredients, directions: direction, datePublished: datePublished, url: "")
+        recipesVM.addRecipe(recipe: recipe)
     }
 }

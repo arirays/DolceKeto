@@ -15,6 +15,12 @@ class RecipesViewModel: ObservableObject {
         //fetchRecipe()
     }
     
+    func addRecipe(recipe: Recipe) {
+        recipes.append(recipe)
+    }
+    
+    
+    
     let baseUrl = ""
     
 //    func fetchRecipe(completed:) {
