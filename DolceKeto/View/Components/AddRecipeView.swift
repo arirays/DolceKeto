@@ -14,7 +14,7 @@ struct AddRecipeView: View {
     @State private var description = ""
     @State private var ingredients = ""
     @State private var direction = ""
-    @State private var navigateToRecipe = false
+    @State private var navigateToNewRecipe = false
     
     @Environment(\.dismiss) var dismiss
     
@@ -49,23 +49,22 @@ struct AddRecipeView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(isActive: $navigateToRecipe) {
-                        DetailRecipeView(recipe: recipesVM.recipes.sorted{ $0.datePublished > $1.datePublished} [0])
+                    NavigationLink(isActive: $navigateToNewRecipe) {
+                        DetailRecipeView(recipe: recipesVM.recipes.sorted{ $0.datePublished > $1.datePublished}[1])
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button {
                             saveRecipe()
-                            navigateToRecipe = true
+                            navigateToNewRecipe = true
                         } label: {
                             Label("Done", systemImage: "checkmark")
                                 .labelStyle(.iconOnly)
                         }
-                        
                     }
                     .disabled(name.isEmpty)
                 }
             })
-            .navigationTitle("New Recipe")
+            .navigationTitle("Add New Recipe")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -82,7 +81,6 @@ struct AddRecipeView_Previews: PreviewProvider {
 extension AddRecipeView {
     private func saveRecipe() {
         let now = Date()
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
