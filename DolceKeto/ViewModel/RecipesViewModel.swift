@@ -12,19 +12,36 @@ class RecipesViewModel: ObservableObject {
     
     init() {
         recipes = Recipe.testRecipes
-        //fetchRecipe()
+        //getRecipe()
     }
     
     func addRecipe(recipe: Recipe) {
         recipes.append(recipe)
     }
     
+//    var favoriteRecipes: [Recipe] {
+//        recipes.filter { $0.isFavorite }
+//    }
+    
     
     
     let baseUrl = ""
+    let recipeURL = ""
     
-//    func fetchRecipe(completed:) {
+    func getRecipe() async throws -> [Recipe] {
+        guard let url = URL(string: recipeURL) else {
+            throw DKError.invalidURL
+        }
         
-//    }
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        do {
+            let decoder = JSONDecoder()
+            let decodedResponse = try decoder.decode(RecipeResponse.self, from: data)
+            return decodedResponse.request
+        } catch {
+            throw DKError.invalidData
+        }
+    }
     
 }

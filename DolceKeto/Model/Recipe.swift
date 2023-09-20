@@ -18,7 +18,10 @@ struct Recipe: Decodable, Identifiable {
     let directions: String
     let datePublished: String
     let url: String
+    
+//    var isFavorite = false
 }
+
 
 
 extension Recipe {

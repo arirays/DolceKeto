@@ -60,11 +60,22 @@ struct DetailRecipeView: View {
                         }
                     }
                 }
-//                .padding()
+                
                 .frame(maxWidth: 300, alignment: .leading)
 //                .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(.horizontal)
+//            .toolbar {
+//                ToolbarItem {
+//                    HStack{
+//                        Button(action: {
+//                            recipe.isFavorite.toggle()
+//                        }) {
+//                            Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+//                        }
+//                    }
+//                }
+//            }
         }
         .ignoresSafeArea(.container, edges: .top)
     }

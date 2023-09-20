@@ -16,7 +16,7 @@ struct TabBar: View {
             }
             FavoritesView()
                 .tabItem {
-                Label("Favorites", systemImage: "heart")
+                Label("Favorites", systemImage: "heart.fill")
             }
             NewRecipeView()
                 .tabItem {
