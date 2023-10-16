@@ -7,8 +7,11 @@
 
 import Foundation
 
+
+@MainActor
 class RecipesViewModel: ObservableObject {
     @Published private(set) var recipes: [Recipe] = []
+    @Published var isLoading = false
     
     init() {
         recipes = Recipe.testRecipes
@@ -23,25 +26,17 @@ class RecipesViewModel: ObservableObject {
 //        recipes.filter { $0.isFavorite }
 //    }
     
-    
-    
-    let baseUrl = ""
-    let recipeURL = ""
-    
-    func getRecipe() async throws -> [Recipe] {
-        guard let url = URL(string: recipeURL) else {
-            throw DKError.invalidURL
-        }
+    func getRecipes() {
+        isLoading = true
         
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        do {
-            let decoder = JSONDecoder()
-            let decodedResponse = try decoder.decode(RecipeResponse.self, from: data)
-            return decodedResponse.request
-        } catch {
-            throw DKError.invalidData
+        Task {
+            do {
+//                recipes = try await NetworkManager.shared.getRecipes()
+            } catch {
+                //            alertItem = AlertContext.invalidResponse
+            }
         }
     }
+    
     
 }

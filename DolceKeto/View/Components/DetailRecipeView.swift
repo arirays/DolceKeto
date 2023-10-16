@@ -40,9 +40,6 @@ struct DetailRecipeView: View {
                     .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 30) {
-                    if !recipe.description.isEmpty {
-                        Text(recipe.description)
-                    }
                     
                     if !recipe.ingredients.isEmpty {
                         VStack(alignment: .leading, spacing: 20) {
@@ -52,13 +49,13 @@ struct DetailRecipeView: View {
                         }
                     }
                     
-                    if !recipe.directions.isEmpty {
-                        VStack(alignment: .leading ,spacing: 20) {
-                            Text("Directions")
-                                .font(.headline)
-                            Text(recipe.directions)
-                        }
-                    }
+//                    if !recipe.directions.isEmpty {
+//                        VStack(alignment: .leading ,spacing: 20) {
+//                            Text("Directions")
+//                                .font(.headline)
+//                            Text(recipe.directions)
+//                        }
+//                    }
                 }
                 
                 .frame(maxWidth: 300, alignment: .leading)

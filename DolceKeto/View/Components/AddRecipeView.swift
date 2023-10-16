@@ -50,7 +50,7 @@ struct AddRecipeView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(isActive: $navigateToNewRecipe) {
-                        DetailRecipeView(recipe: recipesVM.recipes.sorted{ $0.datePublished > $1.datePublished}[1])
+                        DetailRecipeView(recipe: recipesVM.recipes.sorted{ $0.name > $1.name}[1])
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Button {
@@ -87,7 +87,7 @@ extension AddRecipeView {
         let datePublished = dateFormatter.string(from: now)
         print(datePublished)
         
-        let recipe = Recipe(name: name, image: "", description: description, ingredients: ingredients, directions: direction, datePublished: datePublished, url: "")
+        let recipe = Recipe(name: name, image: "", ingredients: ingredients)
         recipesVM.addRecipe(recipe: recipe)
     }
 }
