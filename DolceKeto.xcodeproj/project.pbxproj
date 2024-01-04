@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2B49662ADDE872001F8340 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B49652ADDE872001F8340 /* PreviewProvider.swift */; };
 		0B2FF9C62AA295ED006F2E74 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */; };
 		0B2FF9C82AA29B77006F2E74 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */; };
 		0B2FF9CC2AA92864006F2E74 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9CB2AA92864006F2E74 /* AddRecipeView.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2B49652ADDE872001F8340 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		0B2FF9CB2AA92864006F2E74 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0B39F5EC2A9ED1A7005E533A /* Preview Assets.xcassets */,
+				0B2B49652ADDE872001F8340 /* PreviewProvider.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				0B2FF9C62AA295ED006F2E74 /* RecipeCard.swift in Sources */,
 				0B2FF9CC2AA92864006F2E74 /* AddRecipeView.swift in Sources */,
 				0B2FF9D02AB148F9006F2E74 /* Webservice.swift in Sources */,
+				0B2B49662ADDE872001F8340 /* PreviewProvider.swift in Sources */,
 				0B2FF9CE2AA93758006F2E74 /* RecipesViewModel.swift in Sources */,
 				0B39F61E2AA0047D005E533A /* SettingsView.swift in Sources */,
 				0B39F5E82A9ED1A7005E533A /* ContentView.swift in Sources */,

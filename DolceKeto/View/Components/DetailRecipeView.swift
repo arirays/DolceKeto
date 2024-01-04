@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailRecipeView: View {
-    var recipe: Recipe
+    @State var recipe: Recipe
     
     var body: some View {
         ScrollView {
@@ -64,7 +64,7 @@ struct DetailRecipeView: View {
             .padding(.horizontal)
 //            .toolbar {
 //                ToolbarItem {
-//                    HStack{
+//                    HStack {
 //                        Button(action: {
 //                            recipe.isFavorite.toggle()
 //                        }) {
