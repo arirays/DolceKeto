@@ -14,7 +14,7 @@ struct Recipe: Codable, Identifiable {
     let id: String // Unique identifier
     let label: String
     let image: String
-    let ingredientLines: [String]
+    var ingredientLines: [String]
 
 //    var isFavorite = false
     

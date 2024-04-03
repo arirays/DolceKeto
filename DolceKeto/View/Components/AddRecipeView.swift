@@ -87,7 +87,7 @@ extension AddRecipeView {
         let datePublished = dateFormatter.string(from: now)
         print(datePublished)
         
-        let recipe = Recipe(name: name, image: "", ingredients: ingredients)
+        let recipe = Recipe(id: "", label: "" , image: "", ingredientLines: [])
         recipesVM.addRecipe(recipe: recipe)
     }
 }

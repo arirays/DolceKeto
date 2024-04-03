@@ -13,6 +13,7 @@ import SwiftUI
     @Published var isShowingDetail = false
     @Published var selectedRecipe: Recipe?
     @Published var isLoading = false
+    @Published var alertItem: AlertItem?
     
     init() {
         recipes = Recipe.testRecipes
@@ -26,7 +27,7 @@ import SwiftUI
             do {
                 recipes = try await NetworkManager.shared.fetchRecipes()
             } catch {
-                //            alertItem = AlertContext.invalidResponse
+                alertItem = AlertContext.invalidResponse
             }
         }
     }

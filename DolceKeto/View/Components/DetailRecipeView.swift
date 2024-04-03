@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct DetailRecipeView: View {
+    
     @State var recipe: Recipe
+    @Binding var isShowingDetail: Bool
     
     var body: some View {
         ScrollView {
             AsyncImage(url: URL(string: recipe.image)) { image in
                 image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                
+//                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 320, height: 225)
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
@@ -30,7 +32,7 @@ struct DetailRecipeView: View {
             
             VStack(spacing: 30) {
                 
-                Text(recipe.name)
+                Text(recipe.label)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -41,11 +43,11 @@ struct DetailRecipeView: View {
                 
                 VStack(alignment: .leading, spacing: 30) {
                     
-                    if !recipe.ingredients.isEmpty {
+                    if !$recipe.ingredientLines.isEmpty {
                         VStack(alignment: .leading, spacing: 20) {
                             Text("Ingredients")
                                 .font(.headline)
-                            Text(recipe.ingredients)
+                            Text(recipe.ingredientLines[$0])
                         }
                     }
                     

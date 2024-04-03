@@ -17,7 +17,7 @@ struct RecipeCard: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .overlay(alignment: .bottom) {
-                        Text(recipe.name)
+                        Text(recipe.label)
                             .font(.headline)
                             .foregroundColor(.white)
                             .shadow(color: .black, radius: 3)
@@ -32,7 +32,7 @@ struct RecipeCard: View {
                     .foregroundColor(.white.opacity(0.7))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .overlay(alignment: .bottom) {
-                        Text(recipe.name)
+                        Text(recipe.label)
                             .font(.headline)
                             .foregroundColor(.white)
                             .shadow(color: .black, radius: 3)

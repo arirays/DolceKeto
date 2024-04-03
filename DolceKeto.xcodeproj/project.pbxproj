@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0DC9902BBD05C00056CA37 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DC98F2BBD05C00056CA37 /* Alert.swift */; };
+		0B0DC9922BBD08760056CA37 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DC9912BBD08760056CA37 /* RemoteImage.swift */; };
 		0B2B49662ADDE872001F8340 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B49652ADDE872001F8340 /* PreviewProvider.swift */; };
 		0B2FF9C62AA295ED006F2E74 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */; };
 		0B2FF9C82AA29B77006F2E74 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0DC98F2BBD05C00056CA37 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0B0DC9912BBD08760056CA37 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		0B2B49652ADDE872001F8340 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		0B2FF9C52AA295ED006F2E74 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		0B2FF9C72AA29B77006F2E74 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				0B39F5E92A9ED1A7005E533A /* Assets.xcassets */,
 				0B39F5EB2A9ED1A7005E533A /* Preview Content */,
 				0B2FF9D12AB14901006F2E74 /* Services */,
+				0B0DC98F2BBD05C00056CA37 /* Alert.swift */,
+				0B0DC9912BBD08760056CA37 /* RemoteImage.swift */,
 			);
 			path = DolceKeto;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B39F6132A9ED570005E533A /* Recipe.swift in Sources */,
+				0B0DC9922BBD08760056CA37 /* RemoteImage.swift in Sources */,
 				0B2FF9C62AA295ED006F2E74 /* RecipeCard.swift in Sources */,
 				0B2FF9CC2AA92864006F2E74 /* AddRecipeView.swift in Sources */,
 				0B2FF9D02AB148F9006F2E74 /* NetworkManager.swift in Sources */,
@@ -358,6 +365,7 @@
 				0B39F61C2AA0046E005E533A /* NewRecipeView.swift in Sources */,
 				0B39F6212AA01181005E533A /* DetailRecipeView.swift in Sources */,
 				0B39F6182AA0044D005E533A /* HomeView.swift in Sources */,
+				0B0DC9902BBD05C00056CA37 /* Alert.swift in Sources */,
 				0B39F6162AA00379005E533A /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
