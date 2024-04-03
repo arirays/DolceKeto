@@ -2,21 +2,35 @@
 //  RecipesViewModel.swift
 //  DolceKeto
 //
-//  Created by AS on 9/6/23.
-//
 
 import Foundation
+import SwiftUI
 
 
-@MainActor
-class RecipesViewModel: ObservableObject {
+@MainActor final class RecipesViewModel: ObservableObject {
+    
     @Published private(set) var recipes: [Recipe] = []
+    @Published var isShowingDetail = false
+    @Published var selectedRecipe: Recipe?
     @Published var isLoading = false
     
     init() {
         recipes = Recipe.testRecipes
         //getRecipe()
     }
+    
+    func getRecipes() {
+        isLoading = true
+        
+        Task {
+            do {
+                recipes = try await NetworkManager.shared.fetchRecipes()
+            } catch {
+                //            alertItem = AlertContext.invalidResponse
+            }
+        }
+    }
+    
     
     func addRecipe(recipe: Recipe) {
         recipes.append(recipe)
@@ -26,17 +40,7 @@ class RecipesViewModel: ObservableObject {
 //        recipes.filter { $0.isFavorite }
 //    }
     
-    func getRecipes() {
-        isLoading = true
-        
-        Task {
-            do {
-//                recipes = try await NetworkManager.shared.getRecipes()
-            } catch {
-                //            alertItem = AlertContext.invalidResponse
-            }
-        }
-    }
+    
     
     
 }
