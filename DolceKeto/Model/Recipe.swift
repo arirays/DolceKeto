@@ -8,7 +8,6 @@
 import Foundation
 
 
- 
 struct Recipe: Codable, Identifiable {
     
     let id: String // Unique identifier
@@ -33,14 +32,14 @@ struct Hit: Codable {
     let recipe: Recipe
 }
 
-struct MockData {
-    static let sampleRecipe = Recipe(id: "001",
-                                     label: "Test Recipe",
-                                     image: "small image or large image",
-                                     ingredientLines: ["flour", "sugar", "2 eggs", "milk"])
-
-    static let recipes = [sampleRecipe, sampleRecipe, sampleRecipe, sampleRecipe]
-}
+//struct MockData {
+//    static let sampleRecipe = Recipe(id: "001",
+//                                     label: "Test Recipe",
+//                                     image: "small image or large image",
+//                                     ingredientLines: ["flour", "sugar", "2 eggs", "milk"])
+//
+//    static let recipes = [sampleRecipe, sampleRecipe, sampleRecipe, sampleRecipe]
+//}
 
 
 extension Recipe {

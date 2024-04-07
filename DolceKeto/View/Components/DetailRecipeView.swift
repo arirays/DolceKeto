@@ -9,79 +9,80 @@ import SwiftUI
 
 struct DetailRecipeView: View {
     
+    //let recipe: Bool
     @State var recipe: Recipe
     @Binding var isShowingDetail: Bool
     
     var body: some View {
         ScrollView {
-            AsyncImage(url: URL(string: recipe.image)) { image in
-                image
-//                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 320, height: 225)
-            } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .foregroundColor(.white.opacity(0.7))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-            .frame(height: 300)
-            .background(Color.gray)
-            
-            VStack(spacing: 30) {
-                
-                Text(recipe.label)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 3)
-                    .frame(maxWidth: 300)
-                    .padding()
-                    .multilineTextAlignment(.center)
-                
-                VStack(alignment: .leading, spacing: 30) {
-                    
-                    if !$recipe.ingredientLines.isEmpty {
-                        VStack(alignment: .leading, spacing: 20) {
-                            Text("Ingredients")
-                                .font(.headline)
-                            Text(recipe.ingredientLines[$0])
-                        }
+            ZStack {
+                VStack {
+                    AsyncImage(url: URL(string: recipe.image)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .foregroundColor(.white.opacity(0.7))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
+                    .frame(height: 300)
+                    .background(Color.gray)
                     
-//                    if !recipe.directions.isEmpty {
-//                        VStack(alignment: .leading ,spacing: 20) {
-//                            Text("Directions")
-//                                .font(.headline)
-//                            Text(recipe.directions)
-//                        }
-//                    }
+                    
+                    VStack(spacing: 30) {
+                        
+                        Text(recipe.label)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .shadow(color: .black, radius: 3)
+                            .frame(maxWidth: 300)
+                            .padding()
+                            .multilineTextAlignment(.center)
+                        
+                        VStack(alignment: .leading, spacing: 30) {
+                            if !$recipe.ingredientLines.isEmpty {
+                                VStack(alignment: .leading, spacing: 20) {
+                                    Text("Ingredients")
+                                        .fontWeight(.semibold)
+                                    ForEach(recipe.ingredientLines, id: \.self) { ingredient in
+                                        Text(ingredient)
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .frame(maxWidth: 300, alignment: .leading)
+//                                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
                 }
+//                .padding(.horizontal)
                 
-                .frame(maxWidth: 300, alignment: .leading)
-//                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(.horizontal)
-//            .toolbar {
-//                ToolbarItem {
-//                    HStack {
-//                        Button(action: {
-//                            recipe.isFavorite.toggle()
-//                        }) {
-//                            Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
-//                        }
-//                    }
-//                }
-//            }
+            
+            //                        .toolbar {
+            //                            ToolbarItem {
+            //                                HStack {
+            //                                    Button(action: {
+            //                                        recipe.isFavorite.toggle()
+            //                                    }) {
+            //                                        Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+            //                                    }
+            //                                }
+            //                            }
+            //                        }
         }
         .ignoresSafeArea(.container, edges: .top)
     }
 }
 
-struct DetailRecipeView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailRecipeView(recipe: Recipe.testRecipes[4])
-    }
+#Preview {
+    DetailRecipeView(recipe: Recipe.testRecipes[2], isShowingDetail: .constant(true))
 }
+
+
+

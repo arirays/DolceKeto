@@ -23,6 +23,11 @@ final class NetworkManager {
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw NetworkError.invalidResponse
+        }
+        
         do {
             let decodedResponse = try JSONDecoder().decode(RecipeResponse.self, from: data)
             return decodedResponse.hits.map {$0.recipe}

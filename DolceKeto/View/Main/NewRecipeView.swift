@@ -17,9 +17,9 @@ struct NewRecipeView: View {
             }
             .navigationTitle("New Recipe")
         }
-        .sheet(isPresented: $showAddRecipe) {
-            AddRecipeView()
-        }
+//        .sheet(isPresented: $showAddRecipe) {
+//            AddRecipeView()
+//        }
     }
 }
 

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RecipeCard: View {
-    var recipe: Recipe
     
+    var recipe: Recipe
+//    @ObservedObject var viewModel: RecipesViewModel
+
     var body: some View {
         VStack {
             AsyncImage(url: URL(string: recipe.image)) { image in
@@ -25,7 +27,7 @@ struct RecipeCard: View {
                             .padding()
                     }
             } placeholder: {
-                Image(systemName: "photo")
+                Image("food-placeholder")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .center)
@@ -50,6 +52,10 @@ struct RecipeCard: View {
 
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
+//        RecipeCard(recipe: Recipe.testRecipes[0])
         RecipeCard(recipe: Recipe.testRecipes[0])
     }
 }
+
+
+
