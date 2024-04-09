@@ -14,7 +14,28 @@ struct RecipeList: View {
     @State private var isShowingDetail = false
     @State private var selectedRecipe: Recipe?
     
+    var columns = [GridItem(.adaptive(minimum: 160), spacing: 20)]
+    
     var body: some View {
+            NavigationStack {
+                LazyVGrid(columns: columns, spacing: 20) {
+//                    ForEach(viewModel.recipe) { recipe in
+//                        RecipeCard(recipe: recipe)
+//                    }
+                    ForEach(viewModel.recipe) { recipe in
+                        NavigationLink(destination: DetailRecipeView(recipe: recipe, isShowingDetail: $isShowingDetail)) {
+                            RecipeCard(recipe: recipe)
+                        }
+                    }
+                }
+                .padding()
+            }
+//            .task {
+//                viewModel.getRecipes()
+//            }
+    }
+    
+  /*  var body: some View {
         NavigationStack {
             VStack {
                 HStack {
@@ -41,6 +62,7 @@ struct RecipeList: View {
             viewModel.getRecipes()
         }
     }
+   */
 }
 
 

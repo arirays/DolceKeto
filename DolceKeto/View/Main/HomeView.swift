@@ -9,16 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
 //    @EnvironmentObject var recipesVM: RecipesViewModel
-    
+    @ObservedObject var viewModel = RecipesViewModel()
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                List(Recipe.testRecipes) {
-                    recipe in
-                    Text(recipe.label)
-                }
-//                RecipeList()
+                RecipeList(recipes: viewModel.recipe)
             }
             .navigationTitle("My Recipes")
         }

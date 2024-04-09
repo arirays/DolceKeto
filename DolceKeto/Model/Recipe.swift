@@ -7,6 +7,7 @@
 
 import Foundation
 
+// - Recipe Data Model. We map data from API and transform to Object in Swift with Codable 
 
 struct Recipe: Codable, Identifiable {
     
@@ -32,16 +33,7 @@ struct Hit: Codable {
     let recipe: Recipe
 }
 
-//struct MockData {
-//    static let sampleRecipe = Recipe(id: "001",
-//                                     label: "Test Recipe",
-//                                     image: "small image or large image",
-//                                     ingredientLines: ["flour", "sugar", "2 eggs", "milk"])
-//
-//    static let recipes = [sampleRecipe, sampleRecipe, sampleRecipe, sampleRecipe]
-//}
-
-
+// - TEST recipes
 extension Recipe {
     static let testRecipes: [Recipe] = [
         Recipe(id: "002", 

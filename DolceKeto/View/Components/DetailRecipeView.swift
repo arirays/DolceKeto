@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DetailRecipeView: View {
     
-    //let recipe: Bool
     @State var recipe: Recipe
     @Binding var isShowingDetail: Bool
     
@@ -57,11 +56,8 @@ struct DetailRecipeView: View {
                         }
                         
                         .frame(maxWidth: 300, alignment: .leading)
-//                                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
-//                .padding(.horizontal)
-                
             }
             
             //                        .toolbar {
