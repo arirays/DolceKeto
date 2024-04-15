@@ -12,7 +12,7 @@ import SwiftUI
 //    @Published private(set) var recipes: [Recipe] = []
     @Published var recipe: [Recipe] = []
     @Published var isShowingDetail = false
-    @Published var selectedRecipe: Recipe?
+//    @Published var selectedRecipe: Recipe?
 //    @Published var isLoading = false
     @Published var alertItem: AlertItem?
     

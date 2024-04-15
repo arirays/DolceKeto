@@ -11,6 +11,7 @@ struct DetailRecipeView: View {
     
     @State var recipe: Recipe
     @Binding var isShowingDetail: Bool
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView {
@@ -73,6 +74,10 @@ struct DetailRecipeView: View {
             //                        }
         }
         .ignoresSafeArea(.container, edges: .top)
+        Button("Dismiss") {
+            dismiss()
+        }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

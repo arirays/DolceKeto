@@ -13,7 +13,7 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private let cache = NSCache<NSString, UIImage>()
     
-    private let urlString = "https://api.edamam.com/api/recipes/v2?type=public&app_id=d1ed5062&app_key=e144b997943e3f6969fc0ea89fa1ede6&diet=low-carb&mealType=Teatime&dishType=Desserts&dishType=Sweets&imageSize=REGULAR&random=false&field=uri&field=label&field=image&field=ingredientLines"
+    private let urlString = "https://api.edamam.com/api/recipes/v2?type=public&app_id=d1ed5062&app_key=e144b997943e3f6969fc0ea89fa1ede6&diet=low-carb&mealType=Teatime&dishType=Desserts&dishType=Sweets&imageSize=REGULAR&random=true&field=uri&field=label&field=image&field=ingredientLines"
     
     private init() {}
     

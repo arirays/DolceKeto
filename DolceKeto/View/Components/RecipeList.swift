@@ -12,7 +12,7 @@ struct RecipeList: View {
     var recipes: [Recipe]
     @StateObject var viewModel = RecipesViewModel()
     @State private var isShowingDetail = false
-    @State private var selectedRecipe: Recipe?
+//    @State private var selectedRecipe: Recipe?
     
     var columns = [GridItem(.adaptive(minimum: 160), spacing: 20)]
     
